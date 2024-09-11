@@ -5,4 +5,6 @@
 
 vim.keymap.set('n', '<leader>e', '<cmd>Exp<CR>')
 vim.opt.shell = 'powershell'
+vim.opt.shellxquote = ''
+vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
 return {}
