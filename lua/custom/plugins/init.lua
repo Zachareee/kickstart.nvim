@@ -2,9 +2,20 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.keymap.set('n', '<leader>e', '<cmd>Exp<CR>')
+vim.keymap.set('n', '<leader>p', '<cmd>bd<CR>')
 vim.opt.shell = 'powershell'
 vim.opt.shellxquote = ''
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
-return {}
+return { {
+  'amrbashir/nvim-docs-view',
+  lazy = true,
+  cmd = 'DocsViewToggle',
+  opts = {
+    position = 'right',
+    width = 60,
+  },
+} }
