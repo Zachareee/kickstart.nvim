@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>p', '<cmd>bd<CR>')
 vim.opt.shell = 'powershell'
 vim.opt.shellxquote = ''
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
 return { {
   'amrbashir/nvim-docs-view',
   lazy = true,
