@@ -5,8 +5,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set('n', '<leader>e', '<cmd>Exp<CR>')
-vim.keymap.set('n', '<leader>p', '<cmd>bd<CR>')
 vim.opt.shell = 'powershell'
 vim.opt.shellxquote = ''
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
