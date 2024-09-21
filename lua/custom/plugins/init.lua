@@ -9,12 +9,15 @@ vim.opt.shell = 'powershell'
 vim.opt.shellxquote = ''
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
-return { {
-  'amrbashir/nvim-docs-view',
-  lazy = true,
-  cmd = 'DocsViewToggle',
-  opts = {
-    position = 'right',
-    width = 60,
+return {
+  {
+    'amrbashir/nvim-docs-view',
+    lazy = true,
+    cmd = 'DocsViewToggle',
+    opts = {
+      position = 'right',
+      width = 60,
+    },
   },
-} }
+  'andweeb/presence.nvim',
+}
