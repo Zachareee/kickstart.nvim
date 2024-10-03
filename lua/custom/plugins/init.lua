@@ -9,15 +9,28 @@ vim.opt.shell = 'powershell'
 vim.opt.shellxquote = ''
 vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
+-- require('which-key').add(mappings, opts?)
+
 return {
+  'andweeb/presence.nvim',
   {
-    'amrbashir/nvim-docs-view',
+    'kdheepak/lazygit.nvim',
     lazy = true,
-    cmd = 'DocsViewToggle',
-    opts = {
-      position = 'right',
-      width = 60,
+    cmd = {
+      'LazyGit',
+      'LazyGitConfig',
+      'LazyGitCurrentFile',
+      'LazyGitFilter',
+      'LazyGitFilterCurrentFile',
+    },
+    -- optional for floating window border decoration
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    -- setting the keybinding for LazyGit with 'keys' is recommended in
+    -- order to load the plugin when the command is run for the first time
+    keys = {
+      { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  'andweeb/presence.nvim',
 }
