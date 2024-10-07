@@ -5,9 +5,12 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.shell = 'powershell'
-vim.opt.shellxquote = ''
-vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+if package.config:sub(1, 1) == '\\' then
+  vim.opt.shell = 'powershell'
+  vim.opt.shellxquote = ''
+  vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+end
+
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
 -- require('which-key').add(mappings, opts?)
 
