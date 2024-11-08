@@ -5,6 +5,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.keymap.set('n', '<leader>dt', '<cmd>diffthis<CR>', { desc = '[D]iff[T]his' })
+vim.keymap.set('n', '<leader>do', '<cmd>diffoff<CR>', { desc = '[D]iff[O]ff' })
+
 if package.config:sub(1, 1) == '\\' then
   vim.opt.shell = 'powershell'
   vim.opt.shellxquote = ''
