@@ -12,10 +12,19 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '\\b', ':Neotree reveal buffers<CR>', desc = 'NeoTree buffers', silent = true },
+    { '\\g', ':Neotree reveal git_status<CR>', desc = 'NeoTree git_status', silent = true },
   },
   lazy = false,
   opts = {
+    buffers = {
+      window = {
+        mappings = {
+          ['\\'] = 'close_window',
+        },
+      },
+    },
     filesystem = {
       window = {
         mappings = {
@@ -24,6 +33,13 @@ return {
         },
       },
       hijack_netrw_behavior = 'open_current',
+    },
+    git_status = {
+      window = {
+        mappings = {
+          ['\\'] = 'close_window',
+        },
+      },
     },
   },
 }
