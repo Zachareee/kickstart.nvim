@@ -13,8 +13,8 @@ return {
   cmd = 'Neotree',
   keys = {
     { '\\\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-    { '\\b', ':Neotree reveal buffers<CR>', desc = 'NeoTree buffers', silent = true },
-    { '\\g', ':Neotree reveal git_status<CR>', desc = 'NeoTree git_status', silent = true },
+    { '\\b', ':Neotree reveal buffers<CR>', desc = 'NeoTree reveal buffers', silent = true },
+    { '\\g', ':Neotree reveal git_status<CR>', desc = 'NeoTree reveal git_status', silent = true },
   },
   lazy = false,
   opts = {
