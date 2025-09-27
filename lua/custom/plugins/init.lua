@@ -5,17 +5,18 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
 vim.keymap.set('n', '<leader>dt', '<cmd>diffthis<CR>', { desc = '[D]iff[T]his' })
 vim.keymap.set('n', '<leader>do', '<cmd>diffoff<CR>', { desc = '[D]iff[O]ff' })
 
 if package.config:sub(1, 1) == '\\' then
-  vim.opt.shell = vim.fn.executable 'pwsh' == 1 and 'pwsh' or 'powershell'
-  vim.opt.shellxquote = ''
-  vim.opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+  vim.o.shell = vim.fn.executable 'pwsh' == 1 and 'pwsh' or 'powershell'
+  vim.o.shellxquote = ''
+  vim.o.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
 end
 
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
@@ -30,7 +31,7 @@ return {
   -- },
   {
     'OXY2DEV/markview.nvim',
-    lazy = false,
+    lazy = true,
   },
   -- {
   --   'kevinhwang91/nvim-ufo',

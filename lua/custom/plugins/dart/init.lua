@@ -1,4 +1,4 @@
-require('lspconfig').dartls.setup {
+vim.lsp.config('dartls', {
   cmd = { 'dart', 'language-server', '--protocol=lsp' },
   filetypes = { 'dart' },
   init_options = {
@@ -15,7 +15,7 @@ require('lspconfig').dartls.setup {
       showTodos = true,
     },
   },
-}
+})
 
 local dap = require 'dap'
 
