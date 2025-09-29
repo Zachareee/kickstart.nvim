@@ -24,6 +24,11 @@ return {
       },
     },
     filesystem = {
+      filtered_items = {
+        hide_hidden = true,
+        visible = true,
+        never_show = { '.git' },
+      },
       window = {
         mappings = {
           ['\\'] = 'close_window',

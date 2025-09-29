@@ -408,12 +408,17 @@ require('lazy').setup({
         --  All the info you're looking for is in `:help telescope.setup()`
         --
         defaults = {
+          file_ignore_patterns = { '%.git%p' },
           mappings = {
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
             n = { ['D'] = require('telescope.actions').delete_buffer },
           },
         },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
