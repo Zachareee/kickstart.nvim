@@ -22,7 +22,6 @@ end
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
 -- require('which-key').add(mappings, opts?)
 
-
 ---@module 'lazy'
 ---@type LazySpec
 return {
@@ -50,10 +49,22 @@ return {
   --   end,
   -- },
   {
+    'mistweaverco/kulala.nvim',
+    keys = {
+      { '<leader>Rs', desc = 'Send request' },
+      { '<leader>Ra', desc = 'Send all requests' },
+      { '<leader>Rb', desc = 'Open scratchpad' },
+    },
+    ft = { 'http', 'rest' },
+    opts = {
+      global_keymaps = true,
+      global_keymaps_prefix = '<leader>R',
+      kulala_keymaps_prefix = '',
+    },
+  },
+  {
     'laytan/cloak.nvim',
-    config = function()
-      require('cloak').setup { enabled = true }
-    end,
+    config = function() require('cloak').setup { enabled = true } end,
   },
   {
     'kdheepak/lazygit.nvim',
@@ -86,8 +97,7 @@ return {
   {
     'chipsenkbeil/distant.nvim',
     branch = 'v0.3',
-    config = function()
-      require('distant'):setup()
-    end,
+    lazy = true,
+    config = function() require('distant'):setup() end,
   },
 }
