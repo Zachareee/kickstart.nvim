@@ -22,6 +22,9 @@ end
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
 -- require('which-key').add(mappings, opts?)
 
+
+---@module 'lazy'
+---@type LazySpec
 return {
   -- {
   --   'IogaMaster/neocord',
